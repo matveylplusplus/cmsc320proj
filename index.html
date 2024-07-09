@@ -7528,8 +7528,11 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Data Sources:</p>
 <ol>
+<li>World Happiness Report 2024 (Two Datasets)<ul>
 <li>Helliwell, J. F., Layard, R., Sachs, J. D., De Neve, J.-E., Aknin, L. B., &amp; Wang, S. (Eds.), Data for Table 2.1. (2024). <em>World Happiness Report 2024</em> [Data File]. Retrieved from <a href="https://worldhappiness.report/ed/2024/#appendices-and-data:~:text=for%20Figure%202.1-,Data%20for%20Table%202.1,-Chapter%203%20Appendix">https://worldhappiness.report/ed/2024/#appendices-and-data:~:text=for%20Figure%202.1-,Data%20for%20Table%202.1,-Chapter%203%20Appendix</a>.</li>
-<li>World Bank, World Development Indicators. (2024). <em>World Development Indicators</em> (28) [Data file]. Retrieved from <a href="https://datacatalog.worldbank.org/search/dataset/0037712">https://datacatalog.worldbank.org/search/dataset/0037712</a>.</li>
+<li>Helliwell, J. F., Layard, R., Sachs, J. D., De Neve, J.-E., Aknin, L. B., &amp; Wang, S. (Eds.), Data for Figure 2.1. (2024). <em>World Happiness Report 2024</em> [Data File]. Retrieved from <a href="https://worldhappiness.report/ed/2024/#appendices-and-data:~:text=for%20Chapter%202-,Data%20for%20Figure%202.1,-Data%20for%20Table">https://worldhappiness.report/ed/2024/#appendices-and-data:~:text=for%20Chapter%202-,Data%20for%20Figure%202.1,-Data%20for%20Table</a>.</li>
+</ul>
+</li>
 </ol>
 </div>
 </div>
@@ -7655,7 +7658,25 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Interesting! But we don't really care about anything other than the 'Country name', 'year', and 'Life Ladder' columns, so we're gonna drop them.</p>
+<p>That third column you see, titled 'Life Ladder', is what we're interested in. Think of it as the average "happiness" of a nationally representative sample -- ranging from 1 to 10 -- from a given country. This metric is sometimes called the Cantril Scale or the Cantril ladder.</p>
+<ul>
+<li>For more information, see:<ul>
+<li><a href="https://worldhappiness.report/faq/#:~:text=What%20is%20the%20original%20source%20of%20the%20data%20for%20Figure%202.1%3F%20How%20are%20the%20rankings%20calculated%3F">WHR FAQ</a></li>
+<li><a href="https://news.gallup.com/poll/122453/understanding-gallup-uses-cantril-scale.aspx">Gallup: Understanding How Gallup Uses the Cantril Scale</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now, since we don't really care about anything other than the 'Country name', 'year', and 'Life Ladder' columns, we're gonna drop them.</p>
 </div>
 </div>
 </div>
@@ -7697,6 +7718,28 @@ a.anchor-link {
 [2363 rows x 3 columns]
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>But there's also another issue: the years on this table only go up to 2023! Since the data for 2024 is in a separate dataset, we're going to need to perform some trickery to get all the parts we need in one place.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>So, to make things easier for us donw the line, let's pivot the table around...</p>
 </div>
 </div>
 </div>
@@ -7784,6 +7827,17 @@ Zimbabwe      3.572386
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Import the 2024 data...</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7827,6 +7881,17 @@ Afghanistan       1.7210
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>And then join our two DataFrames.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7836,7 +7901,7 @@ Afghanistan       1.7210
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="n">ll</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">whr_2024</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -7849,65 +7914,26 @@ Afghanistan       1.7210
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>                  2005      2006      2007      2008      2009      2010  \
-Country name                                                               
-Afghanistan        NaN       NaN       NaN  3.723590  4.401778  4.758381   
-Albania            NaN       NaN  4.634252       NaN  5.485470  5.268937   
-Algeria            NaN       NaN       NaN       NaN       NaN  5.463567   
-Angola             NaN       NaN       NaN       NaN       NaN       NaN   
-Argentina          NaN  6.312925  6.073158  5.961034  6.424133  6.441067   
-...                ...       ...       ...       ...       ...       ...   
-Venezuela     7.169621  6.525146       NaN  6.257771  7.188803  7.478455   
-Vietnam            NaN  5.293660  5.421688  5.480425  5.304265  5.295781   
-Yemen              NaN       NaN  4.477133       NaN  4.809259  4.350313   
-Zambia             NaN  4.824455  3.998293  4.730263  5.260361       NaN   
-Zimbabwe           NaN  3.826268  3.280247  3.174264  4.055914  4.681570   
-
-                  2011      2012      2013      2014      2015      2016  \
-Country name                                                               
-Afghanistan   3.831719  3.782938  3.572100  3.130896  3.982855  4.220169   
-Albania       5.867422  5.510124  4.550648  4.813763  4.606651  4.511101   
-Algeria       5.317194  5.604596       NaN  6.354898       NaN  5.340854   
-Angola        5.589001  4.360250  3.937107  3.794838       NaN       NaN   
-Argentina     6.775805  6.468387  6.582260  6.671114  6.697131  6.427221   
-...                ...       ...       ...       ...       ...       ...   
-Venezuela     6.579789  7.066577  6.552796  6.136096  5.568800  4.041115   
-Vietnam       5.767344  5.534570  5.022699  5.084923  5.076315  5.062267   
-Yemen         3.746256  4.060601  4.217679  3.967958  2.982674  3.825631   
-Zambia        4.999114  5.013375  5.243996  4.345837  4.843164  4.347544   
-Zimbabwe      4.845642  4.955101  4.690188  4.184451  3.703191  3.735400   
-
-                  2017      2018      2019      2020      2021      2022  \
-Country name                                                               
-Afghanistan   2.661718  2.694303  2.375092       NaN  2.436034  1.281271   
-Albania       4.639548  5.004403  4.995318  5.364910  5.255482  5.212213   
-Algeria       5.248912  5.043086  4.744627  5.437755  5.217018  5.538172   
-Angola             NaN       NaN       NaN       NaN       NaN       NaN   
-Argentina     6.039330  5.792797  6.085561  5.900567  5.908279  6.260993   
-...                ...       ...       ...       ...       ...       ...   
-Venezuela     5.070751  5.005663  5.080803  4.573830  5.107553  5.948992   
-Vietnam       5.175279  5.295547  5.467451  5.462342  5.540250  6.266509   
-Yemen         3.253560  3.057514  4.196913       NaN       NaN  3.590379   
-Zambia        3.932777  4.041488  3.306797  4.837992  3.082155  3.728098   
-Zimbabwe      3.638300  3.616480  2.693523  3.159802  3.154578  3.296220   
-
-                  2023    2024  
-Country name                    
-Afghanistan   1.445909  1.7210  
-Albania       5.444691  5.3042  
-Algeria            NaN  5.3635  
-Angola             NaN     NaN  
-Argentina     6.393229  6.1881  
-...                ...     ...  
-Venezuela     5.765363  5.6067  
-Vietnam       6.325115  6.0430  
-Yemen         3.531574  3.5610  
-Zambia        3.685568  3.5024  
-Zimbabwe      3.572386  3.3411  
-
-[165 rows x 20 columns]
+<pre>              2005      2006      2007      2008      2009      2010      2011      2012      2013      2014      2015      2016      2017      2018      2019      2020      2021      2022      2023    2024
+Country name                                                                                                                                                                                                  
+Afghanistan    NaN       NaN       NaN  3.723590  4.401778  4.758381  3.831719  3.782938  3.572100  3.130896  3.982855  4.220169  2.661718  2.694303  2.375092       NaN  2.436034  1.281271  1.445909  1.7210
+Albania        NaN       NaN  4.634252       NaN  5.485470  5.268937  5.867422  5.510124  4.550648  4.813763  4.606651  4.511101  4.639548  5.004403  4.995318  5.364910  5.255482  5.212213  5.444691  5.3042
+Algeria        NaN       NaN       NaN       NaN       NaN  5.463567  5.317194  5.604596       NaN  6.354898       NaN  5.340854  5.248912  5.043086  4.744627  5.437755  5.217018  5.538172       NaN  5.3635
+Angola         NaN       NaN       NaN       NaN       NaN       NaN  5.589001  4.360250  3.937107  3.794838       NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN     NaN
+Argentina      NaN  6.312925  6.073158  5.961034  6.424133  6.441067  6.775805  6.468387  6.582260  6.671114  6.697131  6.427221  6.039330  5.792797  6.085561  5.900567  5.908279  6.260993  6.393229  6.1881
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Beautiful.</p>
 </div>
 </div>
 </div>
@@ -7940,7 +7966,7 @@ Zimbabwe      3.572386  3.3411
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now that we've gotten a feel for the data, let's try building a model that takes in a country and predicts its future Life Ladder score. We start by writing a relatively small class that takes in a country from our dataset and fits a Simple Linear Regression (SLR) to the relevant data.</p>
+<p>Now that we've gotten a feel for the data, let's try building a model that takes in a country and predicts its future Life Ladder score. We start by writing a (relatively) small class that takes in a country from our dataset along with a year up to which we want to train it, and fits a Simple Linear Regression (SLR) to the relevant data.</p>
 </div>
 </div>
 </div>
@@ -7964,14 +7990,14 @@ Zimbabwe      3.572386  3.3411
         <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span> <span class="o">=</span> <span class="n">country_loc</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">country_loc</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">train_upto</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">country_loc</span><span class="p">[</span><span class="n">country_loc</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">train_upto</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-
         <span class="c1"># Fit SLR to our training dataset.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">)</span>
 
         <span class="c1"># Form an array of predictions for all values in X.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_train_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="o">.</span><span class="n">size</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="o">.</span><span class="n">size</span> <span class="k">else</span> <span class="kc">None</span> <span class="c1"># Account for the case where there's no test data!</span>
 
+        <span class="c1"># Join tests and trains together for later plotting convenience</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">X_whole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_whole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_pred_whole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y_train_pred</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span><span class="p">))</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_train_pred</span>
@@ -7979,7 +8005,7 @@ Zimbabwe      3.572386  3.3411
         <span class="c1"># Compute the coefficient of determination for our model.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_whole</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_pred_whole</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">test_mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="o">.</span><span class="n">size</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test_pred</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="o">.</span><span class="n">size</span> <span class="k">else</span> <span class="kc">None</span> <span class="c1"># Account for the case where there's no test data!</span>
 
     <span class="k">def</span> <span class="nf">transform_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Take matplotlib axis and impress the HapModel's regression plot upon it."""</span>
@@ -8014,11 +8040,29 @@ Zimbabwe      3.572386  3.3411
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">year</span><span class="p">]])</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">display_happy_pred</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Prints the HapModel's predicted Life Ladder score for the provided year with a little message."""</span>
+<span class="w">        </span><span class="sd">"""Prints the HapModel's predicted Life Ladder score for the provided year and the year's true value (if applicable) with a little message."""</span>
         <span class="n">but</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">', but its true value is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">year</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">year</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span> <span class="k">else</span> <span class="s1">''</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'In </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\'</span><span class="s1">s Life Ladder score is projected to be </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">predict_happiness</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">but</span> <span class="o">+</span> <span class="s1">'!'</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Just looking at that makes me tired. Whew.</p>
+<ul>
+<li>For more on Simple Linear Regression, see:<ul>
+<li><a href="https://online.stat.psu.edu/stat501/lesson/1">PennState, STAT501, Lesson 1: Simple Linear Regression</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Simple_linear_regression">Wikipedia - Simple linear regression</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8031,6 +8075,7 @@ Zimbabwe      3.572386  3.3411
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_prediction_table</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">train_upto</span><span class="o">=</span><span class="mi">2023</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generate DataFrame containing the most important metrics of each country's HapModel."""</span>
     <span class="n">slindex</span> <span class="o">=</span> <span class="n">ll</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">train_upto</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">train_upto</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
     <span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">'Country name'</span><span class="p">:</span> <span class="n">slindex</span><span class="p">,</span>
@@ -8705,6 +8750,16 @@ Zimbabwe      3.572386  3.3411
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Insights-and-Conclusions">Insights and Conclusions<a class="anchor-link" href="#Insights-and-Conclusions">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
